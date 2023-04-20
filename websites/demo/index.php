@@ -16,18 +16,25 @@
 <body>
     <h1> Recommended books </h1>
     <?php
-       $books = [ "Book 1", "Book 2", "Book 3"];
+       $books = [ 
+        [
+            'title' => 'Book 1',
+            'author' => 'author 1',
+            'purchaseUrl' => 'http://example.com'
+        ],
+        [
+            'title' => 'Book 2',
+            'author' => 'author 3',
+            'purchaseUrl' => 'http://example.com'
+        ]
+    ];
     ?>
 
     <ul>
-        <!-- <?php foreach ($books as $book) {
-            echo "<li>$book</li>";
-        }
-
-        ?> -->
-        <!-- or -->
         <?php foreach ($books as $book) : ?>
-            <li><?= $book ?> </li>
+            <a href="<?= $book['purchaseUrl'] ?>">
+                <li><?= $book['title'] ?> </li>
+            </a>
         <?php endforeach; ?>
     </ul>
     
