@@ -1,21 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Demo</title>
-    <!-- <style>
-        body {
-            display: grid;
-            place-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: sans-serif;
-        }
-    </style> -->
-</head>
-<body>
-    <h1> Recommended books </h1>
-    <?php
+<?php
        $books = [ 
         [
             'title' => 'Book 1',
@@ -50,21 +33,10 @@
 
     $filteredBooks = filter($books, function ($book) { 
         return $book['releaseYear'] > 2010;
-    })
+    });
 
     // OR we can simply use the php function: array_filter
-    ?>
 
-    <ul>
-        <?php foreach ($filteredBooks as $book) : ?>
-            
-            <li>
-                <a href="<?= $book['purchaseUrl'] ?>">
-                    <?= $book['title'] ?> (<?= $book['releaseYear'] ?>)
-                </a>
-            </li>
-        <?php endforeach; ?>
-    </ul>
-    
-</body>
-</html>
+require 'index.view.php';
+
+?> 
