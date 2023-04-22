@@ -37,20 +37,26 @@
         ]
     ];
 
-    function filterByAuthor($books, $author) {
+    function filter($items, $fn) {
         $filteredBooks = [];
-        foreach($books as $book) {
-            if($book['author'] === $author) {
-                $filteredBooks[] = $book;
+        foreach($items as $item) {
+            if($fn($item)) {
+                $filteredBooks[] = $item;
             }
         }
 
         return $filteredBooks;
     }
+
+    $filteredBooks = filter($books, function ($book) { 
+        return $book['releaseYear'] > 2010;
+    })
+
+    // OR we can simply use the php function: array_filter
     ?>
 
     <ul>
-        <?php foreach (filterByAuthor($books, 'author 2') as $book) : ?>
+        <?php foreach ($filteredBooks as $book) : ?>
             
             <li>
                 <a href="<?= $book['purchaseUrl'] ?>">
