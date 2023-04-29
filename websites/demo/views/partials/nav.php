@@ -11,10 +11,10 @@
                                 <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                                 <a href="/" class="<?= isValue('/') ? 'bg-gray-900 text-white' : 'text-gray-300'?> hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
                                     aria-current="page">Home</a>
-                                <a href="/about.php"
-                                    class="<?= isValue('/about.php' )? 'bg-gray-900 text-white' : 'text-gray-300'?> hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">About</a>
-                                <a href="/contact.php"
-                                    class="<?= isValue('/contact.php') ? 'bg-gray-900 text-white' : 'text-gray-300'?> hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Contact</a>
+                                <a href="/about"
+                                    class="<?= isValue('/about' )? 'bg-gray-900 text-white' : 'text-gray-300'?> hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">About</a>
+                                <a href="/contact"
+                                    class="<?= isValue('/contact') ? 'bg-gray-900 text-white' : 'text-gray-300'?> hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Contact</a>
                             </div>
                         </div>
                     </div>
