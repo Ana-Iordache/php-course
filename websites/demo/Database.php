@@ -17,10 +17,10 @@
         }
 
         // by default, visibility is public
-        public function query($query) {
+        public function query($query, $params = []) {
 
             $statement = $this->connection->prepare($query);
-            $statement->execute();
+            $statement->execute($params);
 
             return $statement;
             // ;->fetchAll(PDO::FETCH_ASSOC); // to fetch in an associative array rather than indexed
