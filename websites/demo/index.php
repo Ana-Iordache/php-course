@@ -1,6 +1,7 @@
 <?php
     require 'functions.php';
     require 'Database.php'; // moved here so we'll have de db instance before the router is reqired
+    require 'Response.php';
     require 'router.php';
 
     // $id = $_GET['id'];
