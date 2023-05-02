@@ -11,4 +11,11 @@ function dd($value) {
 function isValue($value) {
     return $_SERVER['REQUEST_URI'] == $value;
 }
+
+function authorize($condition, $status = Response::FORBBIDEN) { 
+    if(!$condition) {
+        abort($status);
+    }
+}
+
 ?>
