@@ -1,5 +1,4 @@
 <?php
-$uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 
 // parse_url($uri); // parse the uri and separte the path from the query string
 
@@ -12,13 +11,7 @@ $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 // }
 
 // or simply:
-$routes = [
-    '/' => 'controllers/index.php',
-    '/about' => 'controllers/about.php',
-    '/notes' => 'controllers/notes.php',
-    '/note' => 'controllers/note.php',
-    '/contact' => 'controllers/contact.php'
-];
+$routes = require('routes.php');
 
 function routeToController($uri, $routes) {
     if(array_key_exists($uri, $routes)) {
@@ -33,6 +26,8 @@ function abort($code = Response::NOT_FOUND) {
     require "views/{$code}.php";
     die();
 }
+
+$uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 
 routeToController($uri, $routes);
 ?>
