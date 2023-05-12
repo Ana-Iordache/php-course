@@ -2,9 +2,9 @@
 return [
     '/' => 'controllers/index.php',
     '/about' => 'controllers/about.php',
-    '/notes' => 'controllers/notes.php',
-    '/note' => 'controllers/note.php',
-    '/notes/create' => 'controllers/note-create.php',
+    '/notes' => 'controllers/notes/show.php',
+    '/note' => 'controllers/notes/index.php',
+    '/notes/create' => 'controllers/notes/create.php',
     '/contact' => 'controllers/contact.php'
 ];
 ?>
