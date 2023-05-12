@@ -2,7 +2,7 @@
     class Database {
         public $connection;
         public $statement;
-        public function __construct($config, $username = 'root', $password = 'anaiordache') {
+        public function __construct($config, $username = 'root', $password = '') {
 
             // create an instance of PDO class (PHP Data Object)
             // $dsn -> data durce name => the connection string to the DB

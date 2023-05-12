@@ -8,7 +8,9 @@
             <a href="/notes" class="text-blue-500 underline">go back</a>
         </p>
         <p>
-            <?= $note['body']?>
+            <?= htmlspecialchars($note['body'])?>
+            <!--htmlspecialchars function will prevent the string to be converted to html
+            (if in the body we introduce some html tags)-->
         </p>
     </div>
 </main>
