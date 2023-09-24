@@ -1,4 +1,8 @@
 <?php
+    namespace Core;
+
+    use PDO;
+
     class Database {
         public $connection;
         public $statement;
@@ -15,6 +19,9 @@
             $this->connection = new PDO($dsn, $username, $password, [
                 PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
             ]);
+            // '/PDO' - it looks for this class from the root
+            // 'PDO' - it looks from the current namespace
+            // but it is simplier to declare 'use' at the beginning
         }
 
         // by default, visibility is public

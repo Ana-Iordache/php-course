@@ -1,7 +1,7 @@
 <?php
     const BASE_PATH = __DIR__ . "\\..\\";
 
-    require BASE_PATH . 'functions.php';
+    require BASE_PATH . 'core/functions.php';
     
     // require base_path('Database.php'); // moved here so we'll have de db instance before the router is reqired
     // require base_path('Response.php');
@@ -11,10 +11,11 @@
     // it let us declare manually how we want to go about importing classes that 
     // have not already been explicity/manually rewuired
     spl_autoload_register(function($class) {
+        $class = str_replace("\\", DIRECTORY_SEPARATOR, $class);
         require base_path("core/{$class}.php");
     });
 
-    require base_path('router.php');
+    require base_path('core/router.php');
 
     // $id = $_GET['id'];
     // $query = "select * from posts where id = {$id}";

@@ -1,4 +1,6 @@
 <?php
+namespace Core;
+
 class Validator {
     // this is a pure function => it's not contingent and doesn't depend opon state or values from 
     // the outside world; so we can make it static -> now we can call it without an instance
