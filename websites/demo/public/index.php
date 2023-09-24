@@ -12,7 +12,7 @@
     // have not already been explicity/manually rewuired
     spl_autoload_register(function($class) {
         $class = str_replace("\\", DIRECTORY_SEPARATOR, $class);
-        require base_path("core/{$class}.php");
+        require base_path("{$class}.php");
     });
 
     require base_path('core/router.php');
