@@ -1,4 +1,6 @@
 <?php
+use Core\Response;
+
 function dd($value) {
     // if i want to dispaly an array => var_dump(['something')
     echo "<pre>";
