@@ -14,6 +14,7 @@
             (if in the body we introduce some html tags)-->
         </p>
         <form class="mt-6" method="POST">
+            <input type="hidden" name="_method" value="DELETE"> <!-- sending the information to BE that we perfom a delete req-->
             <input type="hidden" name="id" value="<?= $note['id'] ?>"/>
             <button class="text-sm text-red-500">Delete</button>
         </form>

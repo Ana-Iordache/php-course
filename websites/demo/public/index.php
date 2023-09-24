@@ -1,6 +1,7 @@
 <?php
     const BASE_PATH = __DIR__ . "\\..\\";
 
+    use Core\Router;
     require BASE_PATH . 'Core/functions.php';
     
     // require base_path('Database.php'); // moved here so we'll have de db instance before the router is reqired
@@ -21,7 +22,13 @@
         require base_path("{$class}.php");
     });
 
-    require base_path('Core/router.php');
+    $router = new Router();
+    $routes = require base_path('routes.php');
+
+    $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
+
+    $method = $_POST['_method'] ?? $_SERVER['REQUEST_METHOD']; // shorthand for isset($_POST['_method']) ? $_POST['_method'] : $_SERVER['REQUEST_METHOD']
+    $router->route($uri, $method);
 
     // $id = $_GET['id'];
     // $query = "select * from posts where id = {$id}";
